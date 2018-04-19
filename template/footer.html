@@ -1,0 +1,37 @@
+﻿</div>
+    <!-- /. WRAPPER  -->
+    <div id="footer-sec">
+        WeChat公众号管理后台-技术支持-吴朝鹏
+    </div>
+    <!-- /. FOOTER  -->
+    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+    <!-- JQUERY SCRIPTS -->
+    <script src="assets/js/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="assets/js/bootstrap.js"></script>
+    <!-- METISMENU SCRIPTS -->
+    <script src="assets/js/jquery.metisMenu.js"></script>
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+	<script>
+		$(".sidebar-collapse ul li a").click(function(){
+			
+			var link = $(this).attr("href");
+			if(link=="" || link=="#"){
+				return false;
+			}
+			if(wechatname=="" && link!="ADDWECHAT.ASP" && link!="selectWeChat.asp"){
+				//alert("请选择公众号！");
+				$("#page-all").attr("src","selectWeChat.asp");
+				
+				return false;
+			}
+			$("#page-all").attr("src",link);
+			$(".sidebar-collapse ul li a").removeClass("active-menu");
+			$(this).addClass("active-menu");
+			return false;
+		});
+	</script>
+
+</body>
+</html>
